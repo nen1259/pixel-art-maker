@@ -7,8 +7,13 @@ const tbl = document.getElementById("pixelCanvas");
 // When size is submitted by the user, call makeGrid()
 function makeGrid() {
   // Select size input
-  const gridHeight = document.getElementById("inputWeight").value;
-  const gridWidth = document.getElementById("inputHeight").value;
+  const gridHeight = document.getElementById("inputHeight").value;
+  const gridWidth = document.getElementById("inputWeight").value;
+
+  if(gridHeight > 100 || gridWidth > 100){
+    alert("Maximum Height/Width is 100")
+    return;
+  }
 
   //remove existing rows from table
   for(let i = tbl.rows.length; i > 0 ; i--) {
@@ -41,3 +46,8 @@ function respondToTheClick(evt){
     tableCell.style.backgroundColor=document.getElementById("colorPicker").value;
     }
   }
+
+function respondToTheInput(evt){
+  // TODO
+
+}
